@@ -120,7 +120,8 @@
   
   /* Marquee setup */
   .marquee-wrapper {
-    background-color: transparent !important;
+    align-items: center;
+    background-color: white !important;
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
@@ -131,6 +132,7 @@
   .marquee-content {
      background-color: transparent !important;
     display: inline-block;
+    align-items: center;
     white-space: nowrap;
     animation: scroll-left 6s linear infinite;
   }
