@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Gmail Creator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="newstyles.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#22c55e',secondary:'#16a34a'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+
+</head>
+<body class="bg-gray-50 font-sans">
+<header class="bg-white/80 backdrop-blur-sm shadow-md py-2 flex justify-between items-center px-4">
+  <div style="font-family: 'Pacifico', cursive; font-size: 24px; color: #6366F1; display: flex; align-items: center; gap: 8px;">
+    <i class="ri-code-box-fill" style="font-size: 20px;"></i>
+    <span>RityXTech</span>
+  </div>
+  
+  <button id="toggleSidebar" class="text-gray-600 hover:text-primary focus:outline-none">
+    <i id="sidebarIcon" class="ri-menu-line ri-lg"></i>
+</button>
+</header>
+  <!-- Sidebar -->
+  <div class="sidebar pb-10" id="sidebar">
+  <img src="https://i.imgur.com/2yC0i1t.jpeg" alt="Profile Picture" class="profile-image mx-auto">
+
+  <!-- Social Icons (under profile image) -->
+  <div class="social-icons flex justify-center mt-4">
+  <a href="https://github.com/Rityxtech" class="text-gray-400 hover:text-primary mx-2">
+    <i class="ri-github-fill ri-lg"></i>
+  </a>
+  <a href="https://x.com/RityXTech" class="text-gray-400 hover:text-primary mx-2">
+    <i class="ri-twitter-fill ri-lg"></i>
+  </a>
+  <a href="#" class="text-gray-400 hover:text-primary mx-2">
+    <i class="ri-instagram-fill ri-lg"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/rityxtech-%F0%9F%98%8E-773759228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-primary mx-2">
+    <i class="ri-linkedin-fill ri-lg"></i>
+  </a>
+</div><br>
+
+<div class="title-container">
+  <div class="fixed-title">RityXTech</div>
+  <div class="marquee-wrapper">
+    <div class="marquee-content">
+      <span class="scrolling-text">Front-End Developer</span>
+      <span class="scrolling-text">Front-End Developer</span>
+    </div>
+  </div>
+</div>
+
+  
+  <div class="mt-4 p-4 rounded-lg bg-green-50 border-l-4 border-green-400 shadow-sm">
+    <p class="font-semibold text-green-700 text-sm uppercase mb-1 tracking-wide">🚀 Hire Me</p>
+    <p class="text-sm text-green-600 leading-snug">
+      Need a modern, responsive UI? I craft high-performance front-end solutions using HTML, CSS, JavaScript, and frameworks like Tailwind and React.
+    </p>
+  </div>
+  
+  <div class="mt-4 p-4 rounded-lg bg-yellow-50 border-l-4 border-yellow-400 shadow-sm">
+    <p class="font-semibold text-yellow-700 text-sm uppercase mb-1 tracking-wide">📬 Let’s Connect</p>
+    <p class="text-sm text-yellow-600 leading-snug">
+      I'm open to freelance, remote gigs, or collaborative projects. Let’s build something amazing.
+    </p>
+  </div>
+  
+  <div class="mt-4 p-4 rounded-lg bg-blue-50 border-l-4 border-blue-400 shadow-sm">
+    <p class="font-semibold text-blue-700 text-sm uppercase mb-1 tracking-wide">💡 What I Do</p>
+    <p class="text-sm text-blue-600 leading-snug">
+      UI/UX, landing pages, dashboards, single-page apps, and more all clean, accessible, and fast.
+    </p>
+  </div>
+  
+  <div class="mt-4 p-4 rounded-lg bg-purple-50 border-l-4 border-purple-400 shadow-sm">
+    <p class="font-semibold text-purple-700 text-sm uppercase mb-1 tracking-wide">📎 Skills</p>
+    <p class="text-sm text-purple-600 leading-snug">
+      HTML5, CSS3, JavaScript, TailwindCSS, React.js, Git & more.
+    </p>
+  </div>
+  
+  <div class="mt-4 mb-6 p-4 rounded-lg bg-red-50 border-l-4 border-red-400 shadow-sm">
+    <p class="font-semibold text-red-700 text-sm uppercase mb-1 tracking-wide">📣 Reach Out</p>
+    <p class="text-sm text-red-600 leading-snug">
+      I’m just a DM away, use the social icons to connect with me on your favorite platform.
+    </p>
+  </div>
+  
+</div>
+
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
+
+<div class="min-h-screen relative pb-20 pt-10" style="margin-top: 0;">
+<!-- Main Content -->
+<main class="pt-6 px-4">
+<!-- Welcome Section -->
+
+
+<!-- Last Generated Info -->
+<div class="mb-6 mt-4 text-center w-full max-w-3xl mx-auto">
+<p class="text-sm text-gray-600">
+  <span id="lastGeneratedText">Last Generated: #1</span>
+</p>
+</div>
+
+<!-- Add Email Section -->
+<div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm p-4 mb-6 w-full max-w-3xl mx-auto">
+  <h2 class="text-lg font-medium mb-3 text-gray-800">Connect Your Gmail Address</h2>
+  <div class="flex flex-col gap-2">
+  <input
+  type="email"
+  id="newEmail"
+  placeholder="Enter base email address"
+  class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+  >
+  <button
+  id="addEmailBtn"
+  class="bg-primary text-white px-4 py-2 !rounded-button cursor-pointer hover:bg-primary/90 transition-colors flex items-center justify-center"
+  onclick="document.getElementById('newEmail').value.trim() && addEmail()"
+  >
+  <i class="ri-add-line ri-lg mr-1"></i>
+  Generate My Emails
+  </button>
+  </div>
+  <p id="addEmailError" class="mt-2 text-red-500 text-sm hidden">Please enter valid email addresses</p>
+  
+</div>
+
+<!-- Generate Email Section -->
+<div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm p-4 mb-6 w-full max-w-3xl mx-auto">
+  <h2 class="text-lg font-semibold mb-2 text-gray-800">Pick one of your generated emails</h2>
+  <div class="mb-3">
+    <label for="emailPosition" class="block text-sm text-gray-600 mb-1">
+      Choose a position number <span class="text-gray-400">(1 to total generated)</span>
+    </label>
+    <input
+      type="number"
+      id="emailPosition"
+      min="1"
+      placeholder="e.g. 1 or leave empty for next"
+      class="w-full px-3 py-2 mb-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+    >
+    <p class="text-sm text-gray-500 mb-3">
+      Each number gives you a different email linked to your Gmail. Leave the field empty to get the next unused one.
+    </p>
+    <button
+      id="generateBtn"
+      class="bg-primary text-white px-4 py-2 !rounded-button cursor-pointer hover:bg-primary/90 transition-colors flex items-center justify-center"
+    >
+      <i class="ri-refresh-line ri-lg mr-1"></i>
+      Fetch Email
+    </button>
+    <p id="generateError" class="mt-2 text-red-500 text-sm hidden">Please enter a valid position number</p>
+  </div>
+  
+<div id="generatedEmailContainer" class="mt-4 p-3 bg-gray-50 border border-gray-200 rounded-md hidden">
+<p class="text-sm text-gray-600 mb-1">Generated Email:</p>
+<div class="flex items-center">
+<p id="generatedEmail" class="text-primary font-medium break-all"></p>
+<button id="copyBtn" class="ml-2 text-gray-500 hover:text-primary cursor-pointer w-8 h-8 flex items-center justify-center">
+<i class="ri-file-copy-line ri-lg"></i>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Email List -->
+<div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm p-4 mb-6 w-full max-w-3xl mx-auto">
+<div class="flex justify-between items-center mb-3">
+<h2 class="text-lg font-medium text-gray-800">Saved Emails</h2>
+<div class="flex items-center gap-2">
+<span id="emailCount" class="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs">0 emails</span>
+<button id="clearAllBtn" class="text-gray-400 hover:text-red-500 transition-colors w-8 h-8 flex items-center justify-center">
+<i class="ri-delete-bin-line"></i>
+</button>
+</div>
+</div>
+<div id="emptyState" class="py-8 text-center" style="animation: float 3s ease-in-out infinite;">
+<div class="w-16 h-16 mx-auto mb-4 text-green-400 flex items-center justify-center">
+<i class="ri-mail-line ri-3x"></i>
+</div>
+<p class="text-green-600">No emails added yet</p>
+<p class="text-sm text-green-500 mt-1">Add emails using the form above</p>
+</div>
+<ul id="emailList" class="max-h-[300px] overflow-y-auto divide-y divide-gray-100"></ul>
+</div>
+</main>
+</div>
+<!-- Toast Notification -->
+<div id="toast" class="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-md opacity-0 transition-opacity duration-300 pointer-events-none max-w-[300px] text-center">
+Email copied to clipboard!
+</div>
+   
+    <footer class="bg-gray-800 text-white py-4"> <!-- Reduced padding from py-8 to py-4 -->
+    <div class="container mx-auto text-center">
+        <h3 class="text-lg font-semibold mb-2">Stay Connected</h3> <!-- Reduced margin-bottom -->
+        <div class="flex justify-center space-x-4 mb-2"> <!-- Reduced margin-bottom -->
+            <a href="https://github.com/Rityxtech" class="text-gray-400 hover:text-white transition-colors">
+                <i class="ri-github-fill ri-lg"></i>
+            </a>
+            <a href="https://x.com/RityXTech" class="text-gray-400 hover:text-white transition-colors">
+                <i class="ri-twitter-fill ri-lg"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="ri-instagram-fill ri-lg"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/rityxtech-%F0%9F%98%8E-773759228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition-colors">
+                <i class="ri-linkedin-fill ri-lg"></i>
+            </a>
+        </div>
+        <p class="text-sm mb-1">© 2023 Multi-Gmail Creator. All rights reserved.</p> <!-- Reduced margin-bottom -->
+        <p class="text-sm">Made with ❤️ by RityXTech</p>
+    </div>
+</footer>
+<!-- Welcome Modal -->
+<div id="welcomeModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+  <div class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white p-6 rounded-lg shadow-xl w-full max-w-lg relative animate-fade-in mx-2.5">
+    <button id="closeWelcomeModal" class="absolute top-2 right-2 text-white hover:text-yellow-200 text-xl">&times;</button>
+    <div class="text-center space-y-5">
+      <h2 class="text-2xl md:text-3xl font-bold drop-shadow-lg tracking-wide">Welcome to Email Generator!</h2>
+      <p class="text-base md:text-lg text-white/90 font-medium">
+        Just give us your <span class="font-semibold text-yellow-200">Gmail address</span>, and we’ll generate over 
+        <span class="font-semibold text-yellow-200">200 unique Gmail-style email variations</span> all connected to your real inbox.
+      </p>
+      <ul class="list-disc list-inside text-left text-sm leading-relaxed space-y-2 mx-auto max-w-md text-white/90">
+        <li><span class="text-white font-semibold">Instantly create hundreds of inbox-connected emails</span></li>
+        <li><span class="text-white font-semibold">Use them on any site, they’re fully valid</span></li>
+        <li><span class="text-white font-semibold">No setup or tech skills required</span></li>
+        <li><span class="text-white font-semibold">Perfect for signups, testing, marketing, and more</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <script src="newscript.js"></script>
+</body>
+</html>

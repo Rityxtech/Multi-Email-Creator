@@ -1,0 +1,222 @@
+/* ❌ REMOVE THIS */
+:where([class^="ri-"])::before {
+    content: "\f3c2";
+  }
+  
+  body {
+  min-height: 762px;
+  background: linear-gradient(-45deg, #ffffff, #dcfce7, #ffffff, #bbf7d0);
+  background-size: 400% 400%;
+  }
+  @keyframes gradientBG {
+  }
+  @keyframes float {
+  0% {
+  transform: translateY(0px);
+  }
+  50% {
+  transform: translateY(-10px);
+  }
+  100% {
+  transform: translateY(0px);
+  }
+  }
+  @keyframes pulse {
+  0% {
+  transform: scale(1);
+  }
+  50% {
+  transform: scale(1.05);
+  }
+  100% {
+  transform: scale(1);
+  }
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+  input[type="number"] {
+  -moz-appearance: textfield;
+  }
+  #lastGeneratedText {
+    font-size: 1.5rem; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff6a65, #ff5e3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s ease-in-out infinite;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  body.overflow-hidden {
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  @media (max-width: 640px) { /* Tailwind's sm breakpoint for smaller screens */
+    .sidebar {
+      width: 100%; /* Make sidebar full width on mobile */
+    }
+    .social-icons {
+      display: flex; /* Use flexbox for layout */
+      justify-content: center; /* Center the icons */
+      margin-top: 20px; /* Add some space above */
+    }
+  }
+  
+  .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh; /* Ensure it spans the full screen */
+      max-height: 100vh; /* Prevent overflow beyond the viewport */
+      width: 320px;
+      overflow-y: auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      z-index: 40;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+  }
+  .sidebar.show {
+      transform: translateX(0);
+  }
+  .profile-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+  }
+  .social-icons a {
+      margin: 0 10px;
+      color: #4a5568;
+      transition: color 0.3s;
+  }
+  .social-icons a:hover {
+      color: #22c55e;
+  }
+  
+  .title-container {
+    display: flex;
+    background-color: transparent !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 20px;
+  }
+  
+  /* Fixed top title */
+  .fixed-title {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: colorShift 3s linear infinite;
+    font-family: 'Pacifico', cursive;
+  }
+  
+  
+  /* Marquee setup */
+  .marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    height: 30px;
+  }
+  
+  .marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 6s linear infinite;
+  }
+  
+  .scrolling-text {
+    display: inline-block;
+    padding-right: 50px; /* space between repeats */
+    font-size: 1.25rem;
+    animation: colorShift 2s linear infinite;
+  }
+  
+  /* Scroll animation */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Color shift animation */
+  @keyframes colorShift {
+    0%   { color: #22c55e; }   /* green */
+    25%  { color: #3b82f6; }   /* blue */
+    50%  { color: #ec4899; }   /* pink */
+    75%  { color: #f59e0b; }   /* orange */
+    100% { color: #22c55e; }   /* back to green */
+  }
+  
+  
+  footer {
+      background-color: #1f2937; /* Dark gray background */
+  }
+  
+  footer a {
+      transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+      color: #22c55e; /* Change to your primary color on hover */
+  }
+  
+  footer {
+      background-color: #1f2937; /* Dark gray background */
+  }
+  
+  footer a {
+      transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+      color: #22c55e; /* Change to your primary color on hover */
+  }
+  
+  @keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1.5s ease-in-out;
+  }
+  
+  header {
+      position: fixed; /* Fix the header at the top */
+      top: 0; /* Position it at the top */
+      left: 0; /* Stretch to the left */
+      right: 0; /* Stretch to the right */
+      background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white */
+      backdrop-blur: 10px; /* Optional: add a blur effect */
+      z-index: 10; /* Ensure it stays above other content */
+  }
+  /* Add this media query */
+  @media (min-width: 640px) { /* Tailwind's sm breakpoint for larger screens */
+    .welcome-container {
+      min-height: 500px;
+    }
+  }
